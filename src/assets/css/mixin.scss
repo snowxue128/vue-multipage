@@ -1,0 +1,77 @@
+    $ic: #ee8100;
+    $bg:#eeeeee;
+    //定位上下左右居中
+    @mixin center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    //定位上下居中
+    @mixin ct {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    //定位左右居中
+    @mixin cl {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    //宽高
+    @mixin wh($width, $height) {
+        width: $width;
+        height: $height;
+    }
+
+    //文本溢出
+    @mixin ellipsis($num) {
+        overflow: hidden;
+        word-wrap: break-word;
+        white-space: normal;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $num;
+    }
+
+    //弹性盒子上下左右居中
+    @mixin align-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    //弹性盒子上下居中，左右撑开
+    @mixin align-center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    //纵轴为主轴，水平垂直居中
+    @mixin align-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    //绝对定位
+    @mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+        position: absolute;
+    }
+
+    @mixin opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+    }
